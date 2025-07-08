@@ -38,7 +38,7 @@ Each folder in this repository represents a standalone project, including all ne
 
 I'm **Ghazal Ayobi**, a data Scientist/Analyst passionate about turning data into actionable insights. With a background in Big Data Management and Business analytics, I enjoy solving real-world problems using data driven approaches.
 
-👉 [LinkedIn](https://www.linkedin.com/in/ghazalayobi)  
+👉 [LinkedIn](https://www.linkedin.com/in/ghazal-ayobi/)  
 
 ---
 
