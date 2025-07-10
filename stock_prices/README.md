@@ -73,6 +73,7 @@ Through structured querying and aggregation techniques, this project provides in
   \[
   \text{Value} = \left(\frac{\text{Last Price}}{\text{First Price}}\right) \times 10{,}000
   \]
+  ![Return across sectors](https://github.com/ghazalayobi/data-projects/blob/main/stock_prices/plots/sector_returns_plot.png)
 
 ### 📉 Event Reaction
 - Compared sector prices **pre vs post** Fed rate hike (March → April 2025)
