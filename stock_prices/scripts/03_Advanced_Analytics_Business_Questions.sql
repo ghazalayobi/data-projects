@@ -169,6 +169,7 @@ RCL   |     99.99|
  */
 
 /*  4. Sector-Level Average Return */
+-- Total performance for each ticker over the full year
 WITH first_last AS (
   SELECT 
     tm.sector,
@@ -213,43 +214,43 @@ Energy                |         -9.67|    9033.48|Loss            |
 
 /*  5. Top/Bottom Performers in Last 6 Months */
 -- Top 5
-WITH returns AS (
-  SELECT
-    ticker,
-    MIN(adj_close) AS start_price,
-    MAX(adj_close) AS end_price
-  FROM stock_prices
-  WHERE date BETWEEN '2025-01-01' AND '2025-06-30'
-  GROUP BY ticker
-)
-SELECT ticker,
-       ROUND(((end_price - start_price) / start_price)::numeric * 100, 2) AS return_pct
-FROM returns
-ORDER BY return_pct DESC
-LIMIT 5;
 
+WITH first_last AS (
+  SELECT 
+    ticker,
+    FIRST_VALUE(adj_close) OVER (PARTITION BY ticker ORDER BY date ASC 
+      ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) AS first_price,
+    LAST_VALUE(adj_close) OVER (PARTITION BY ticker ORDER BY date 
+      ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) AS last_price
+  FROM stock_prices
+  WHERE date BETWEEN '2025-01-01' AND '2025-06-30')
+SELECT distinct ticker,
+       ROUND(((last_price - first_price) / first_price)::numeric * 100, 2) AS return_pct
+FROM first_last
+ORDER BY return_pct
+LIMIT 5;
 
 /*
  * Top 5
- *ticker|return_pct|
+ticker|return_pct|
 ------+----------+
-UNH   |    118.51|
-MU    |     97.64|
-TSLA  |     93.01|
-AVGO  |     85.12|
-AMD   |     83.88|
+CVS   |     58.47|
+GE    |     51.24|
+NFLX  |     49.21|
+MU    |     43.05|
+RCL   |     36.00|
  */
 
 /*
  * Bottom 5
-
 ticker|return_pct|
 ------+----------+
-MCD   |     15.52|
-JNJ   |     18.99|
-XOM   |     19.12|
-^DJI  |     19.22|
-LMT   |     19.64|
+UNH   |    -38.03|
+TGT   |    -26.22|
+TMO   |    -21.72|
+MRK   |    -18.74|
+AAPL  |    -17.34|
+
  */
 
 /*  6. Compare pre/post Fed rate hike (e.g., April 2025) */

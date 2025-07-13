@@ -281,7 +281,6 @@ JNJ   |     18.99|
 - Unique Tickers: 73 (all with full records)
 - No missing or invalid adjusted close values
 - Sector Coverage: 10 stock sectors + 3 indices
-- Price Trends: E.g., TSLA +150%, AVGO +100%, MCD avg $291
 ===============================================
 */
 
