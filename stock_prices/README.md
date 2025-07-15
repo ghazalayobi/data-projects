@@ -43,7 +43,7 @@ Through structured querying and aggregation techniques, this project provides in
 
 | Metric                      | Highlight                             |
 |----------------------------|----------------------------------------|
-| **Top Sector (Return)**    | Communication Services: +38.4%         |
+| **Top Sector (Return)**    | Communication Services: +38.4%        |
 | **Worst Sector (Return)**  | Energy: −9.7%                          |
 | **Best Performing Stock**  | RCL: +99.9%                            |
 | **Top Index Performance**  | NASDAQ Composite: +13.4%              |
@@ -66,12 +66,21 @@ Through structured querying and aggregation techniques, this project provides in
 - Grouped average prices per sector per month to detect patterns
 
 ### 💸 $10,000 Investment Simulation
-- For each sector:  
-  ![Return across sectors](https://github.com/ghazalayobi/data-projects/blob/main/stock_prices/plots/sector_returns_plot.png)
+- For each sector: tracked normalized investment value growth over time
 
 ### 📉 Event Reaction
 - Compared sector prices **pre vs post** Fed rate hike (March → April 2025)
 - Tagged each sector as `Positive` or `Negative` trend
+
+---
+
+## 📊 Interactive Dashboard
+
+Here’s an **interactive Tableau dashboard** where you can explore the results yourself:
+
+[![ETF Dashboard Preview](dashboard_preview.png)](https://public.tableau.com/views/CustomMulti-SectorETFSimulationMarketIndexPerformanceAnalysis/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+
+👉 **Click the image above** to view the live dashboard on Tableau Public.
 
 ---
 
@@ -83,10 +92,10 @@ Through structured querying and aggregation techniques, this project provides in
 - **Dashboard**: Tableau
 
 ---
+
 ## 🚀 What You’ll Learn
 
 - How to build a **sector-balanced portfolio** using real-world data
 - How to measure **ETF-like performance** using custom logic
 - How **sector rotation** and **macroeconomic shifts** influence stock prices
 - How structured queries can power deep financial analytics
-
