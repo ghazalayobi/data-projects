@@ -57,9 +57,6 @@ Through structured querying and aggregation techniques, this project provides in
 ### 💹 Custom ETF Construction
 - Each sector contributed 10 tickers, equally weighted
 - Final performance per ticker computed as:  
-  \[
-  \text{Return}_i = \frac{\text{Last Price} - \text{First Price}}{\text{First Price}} \times 100
-  \]
 - Sector and ETF return calculated as average of constituent returns
 
 ### 📊 Volatility Assessment
