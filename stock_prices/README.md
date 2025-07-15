@@ -70,9 +70,6 @@ Through structured querying and aggregation techniques, this project provides in
 
 ### 💸 $10,000 Investment Simulation
 - For each sector:  
-  \[
-  \text{Value} = \left(\frac{\text{Last Price}}{\text{First Price}}\right) \times 10{,}000
-  \]
   ![Return across sectors](https://github.com/ghazalayobi/data-projects/blob/main/stock_prices/plots/sector_returns_plot.png)
 
 ### 📉 Event Reaction
