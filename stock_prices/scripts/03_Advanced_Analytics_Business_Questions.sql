@@ -253,7 +253,7 @@ AAPL  |    -17.34|
 
  */
 
-/*  6. Compare pre/post Fed rate hike (e.g., April 2025) */
+/*  6. Compare pre/post Fed rate Decision (March 2025 vs April 2025) */
 SELECT
   sp.ticker,
   ROUND((AVG(sp.adj_close) FILTER (WHERE sp.date BETWEEN '2025-03-01' AND '2025-03-31'))::numeric, 2) AS avg_march,
@@ -350,7 +350,7 @@ TMO   |   516.49|   438.97|  -77.52|Negative Trend|
 ^DJI  | 42092.13| 39876.33|-2215.80|Negative Trend|
  */
 
-/*  7. Compare pre/post Fed rate hike (e.g., April 2025) secor wise */
+/*  7. Compare pre/post Fed rate Decision (March 2024 vs April 2025) secor wise */
 SELECT
   tm.sector,
   ROUND((AVG(sp.adj_close) FILTER (WHERE sp.date BETWEEN '2025-03-01' AND '2025-03-31'))::numeric, 2) AS avg_march,
@@ -394,15 +394,15 @@ Dow_Jones             | 42092.13| 39876.33|-2215.80|Negative Trend|
 	•	Monthly trends showed Tech and Consumer Discretionary rising early in the year; Energy and Healthcare lagged.
 
  Performance & Returns
-	•	Best full-year returns: RCL, NFLX, AVGO (+66 - 99%).
+	•	Best one year returns: RCL, NFLX, AVGO (+66 to 99%).
 	•	Worst performers: UNH, MRK, ADBE (down ~30%+).
 	•	Simulated $10K investment:
 	•	Top sectors: Communication Services (+38%), Financials (+35%).
-	•	Indices: S&P 500, NASDAQ, and Dow returned ~12–13%.
+	•	Indices: S&P 500, NASDAQ, and Dow returned ~12 to 13%.
 	•	Healthcare and Energy ended below starting capital.
 
- Fed Hike Impact (April 2025)
-	•	All sectors and indices declined post-hike.
+ Fed Rate Decision Impact (March 2025 vs April 2025)
+	•	All sectors and indices declined post Fed rate decision.
 	•	Few stocks like NFLX, UNH showed resilience.
 	•	Sector wide April dips: Tech (-$20), Financials (-$15), S&P500 (-$314), Dow (-$2,200+).
 ===============================================
