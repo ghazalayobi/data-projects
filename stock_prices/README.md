@@ -78,7 +78,7 @@ Through structured querying and aggregation techniques, this project provides in
 
 Here’s an **interactive Tableau dashboard** where you can explore the results yourself:
 
-[![ETF Dashboard Preview](dashboard_preview.png)](https://public.tableau.com/views/CustomMulti-SectorETFSimulationMarketIndexPerformanceAnalysis/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+[![ETF Dashboard Preview](dashboard_preview.png)](https://public.tableau.com/views/CustomETFvsSP500NASDAQDowOne-YearSectorAnalysis/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
 👉 **Click the image above** to view the live dashboard on Tableau Public.
 
