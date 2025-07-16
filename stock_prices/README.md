@@ -35,7 +35,7 @@ Through structured querying and aggregation techniques, this project provides in
 - How did the ETF fare against major indices over the year?
 - Which tickers showed the highest **risk-adjusted** return?
 - What was the **volatility** of each constituent and sector?
-- How did the market respond to the **Fed rate hike** in April 2025?
+- How did the market respond to the **Fed rate Decision** in March 2025 and April 2025?
 
 ---
 
@@ -48,7 +48,7 @@ Through structured querying and aggregation techniques, this project provides in
 | **Best Performing Stock**  | RCL: +99.9%                            |
 | **Top Index Performance**  | NASDAQ Composite: +13.4%              |
 | **ETF vs S&P 500**         | ETF average return beat index by 11%  |
-| **Fed Hike Impact**        | All sectors showed a negative drift   |
+| **Fed Rate Impact**        | All sectors showed a negative drift   |
 
 ---
 
@@ -69,7 +69,7 @@ Through structured querying and aggregation techniques, this project provides in
 - For each sector: tracked normalized investment value growth over time
 
 ### 📉 Event Reaction
-- Compared sector prices **pre vs post** Fed rate hike (March → April 2025)
+- Compared sector prices **pre vs post** Fed rate decision (March → April 2025)
 - Tagged each sector as `Positive` or `Negative` trend
 
 ---
