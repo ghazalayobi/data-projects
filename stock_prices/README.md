@@ -10,10 +10,10 @@ Through structured querying and aggregation techniques, this project provides in
 
 ---
 
-## 📑 Slide‑Style Project Overview (PDF)
+## 📑 Slides (PDF)
 
 If you’d like a quick visual walkthrough of the project (with code snippets, dashboards, and insights),  
-👉 **[View the Mini Presentation (PDF)](https://github.com/USERNAME/REPO/blob/main/assets/ETF_Project_Presentation.pdf)**
+👉 **[View the Mini Presentation (PDF)](https://github.com/ghazalayobi/data-projects/blob/main/stock_prices/reports/multi-sector-custom-EFT-and-indices-analysis.pdf)**
 
 ![PDF Preview](https://github.com/USERNAME/REPO/blob/main/assets/pdf_preview_image.png)
 
