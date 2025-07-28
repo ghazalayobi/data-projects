@@ -4,7 +4,7 @@
 olist_db
 │
 └── Schema: bronze
-      ├── geolocation
+      \n├── geolocation
       ├── customers
       ├── sellers
       ├── products
