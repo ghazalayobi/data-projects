@@ -1,10 +1,11 @@
 
 ## work in progress
 
+```text
 olist_db
 │
 └── Schema: bronze
-      \n├── geolocation
+      ├── geolocation
       ├── customers
       ├── sellers
       ├── products
