@@ -39,15 +39,9 @@ This document describes how data is transformed from the `bronze` layer to the `
 |--------------------|----------------|
 | `customer_id` / `customer_unique_id` | Direct mapping. |
 | `zip_code_prefix`  | Converted to 5-digit format using `LPAD(zip_code_prefix::text, 5, '0')`. |
-| `city` | 
-- If only numbers or whitespace → `'unknown'`.<br>
-- Special case: `'sp'` with `state = 'SP'` → `'sao paulo'`.<br>
-- Special case: `'4o centenario'` → `'4º centenario'`.<br>
-- Remove everything after `/` or `\` using `regexp_replace(city, '[\\/].*$', '')`.<br>
-- Trim, lowercase, remove special characters (`[^a-z\s]`), collapse multiple spaces (`\s+` → `' '`), and unaccent. |
+| `city` | If only numbers or whitespace → `'unknown'`.<br>Special case: `'sp'` with `state = 'SP'` → `'sao paulo'`.<br>Special case: `'4o centenario'` → `'4º centenario'`.<br>Remove everything after `/` or `\` using `regexp_replace(city, '[\\/].*$', '')`.<br>Trim, lowercase, remove special characters (`[^a-z\\s]`), collapse multiple spaces (`\\s+` → `' '`), and unaccent. |
 | `state`            | Uppercase and trim whitespace. |
 | `dwh_create_date`  | Set to `CURRENT_TIMESTAMP`. |
-
 ---
 
 ## 🧑‍💼 Table: `silver.sellers`
