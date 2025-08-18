@@ -151,8 +151,6 @@ The project pipeline can be summarized as:
 ---
 
 ## 🔮 Future Enhancements
-- Automate ingestion via **Airflow or dbt**.  
-- Implement **CI/CD** for SQL scripts.  
 - Add **machine learning models** for demand forecasting.  
 - Deploy dashboards to **Tableau Public** for sharing.  
 
