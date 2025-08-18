@@ -1,130 +1,171 @@
-# Olist E-commerce Data Analysis Project
+# Olist E-Commerce Data Engineering & Analytics Project
 
 ## 📌 Project Overview
-This project focuses on analyzing the **Olist e-commerce dataset**, a Brazilian marketplace that connects small businesses to customers.  
-The dataset contains detailed information on **orders, products, sellers, customers, reviews, and payments**, making it ideal for building a data pipeline and performing advanced SQL-based analytics.  
+This project demonstrates an **end-to-end data engineering and analytics pipeline** using the **Olist E-Commerce dataset**.  
+The work includes **data ingestion, cleaning, transformation, pipeline orchestration, database design, stored procedures, and advanced SQL analytics**, culminating in interactive dashboards and insights.  
 
-The project includes:
-- Data cleaning & transformation (Bronze → Silver → Gold layers)
-- SQL queries for **exploratory data analysis (EDA)** and **business questions**
-- Visualization through Tableau dashboards
-- Documentation with ERD, Data Architecture, and Data Flow diagrams
+The goal is to showcase not only **data analysis skills**, but also **data engineering practices** such as building a robust pipeline, handling messy data, and ensuring scalability.
 
 ---
 
-## 🗂️ Dataset Description
-The dataset is composed of multiple tables. Below are the main ones used:
+## 🏗️ Data Pipeline Architecture
+The project was structured as a complete data engineering pipeline:
 
-- **Customers** – customer details including location  
-- **Sellers** – seller information  
-- **Products** – product details such as category and dimensions  
-- **Orders** – order details (status, timestamps, etc.)  
-- **Order Items** – line-level information on purchased products  
-- **Payments** – order payment information  
-- **Reviews** – customer review scores and feedback  
+1. **Data Ingestion**  
+   - Raw Olist dataset ingested into the `bronze` layer.
+   - Stored in CSV format and imported into PostgreSQL (via DBeaver/SQL scripts).
 
----
+2. **Data Cleaning & Transformation**  
+   - Cleaning in `silver` layer:
+     - Removed nulls and duplicates.  
+     - Standardized inconsistent date/time formats.  
+     - Normalized categorical values (e.g., state codes, product categories).  
+     - Handled outliers (e.g., extreme delivery times).  
+   - Implemented **SQL scripts + stored procedures** for automated cleaning.
 
-## 🏗️ Data Architecture
-This project follows a **medallion architecture** (Bronze → Silver → Gold):  
+3. **Enrichment & Business Logic**  
+   - In `gold` layer:
+     - Created fact and dimension tables.  
+     - Derived KPIs: revenue, repeat customers, delivery delays, etc.  
+     - Built star schema for efficient querying.
 
-1. **Bronze Layer** – Raw imported data from Olist.  
-2. **Silver Layer** – Cleaned and standardized data (duplicates removed, null handling, type corrections).  
-3. **Gold Layer** – Business-ready aggregated tables for analytics and dashboards.  
-
-📌 *Insert Data Architecture Diagram Here*  
-![Data Architecture Placeholder](path/to/your/architecture-diagram.png)
-
----
-
-## 🔄 Data Flow
-The ETL pipeline processes data as follows:
-- **Extract**: Load raw CSV files into the Bronze schema  
-- **Transform**: Apply cleaning, integrity checks, and relational joins in the Silver schema  
-- **Load**: Aggregate metrics into the Gold schema for analytics  
-
-📌 *Insert Data Flow Diagram Here*  
-![Data Flow Placeholder](path/to/your/data-flow-diagram.png)
+4. **Orchestration & Pipeline Management**  
+   - Developed a reproducible pipeline using SQL scripts.  
+   - Structured into:
+     - **Bronze** → Raw ingestion  
+     - **Silver** → Cleaned, conformed data  
+     - **Gold** → Analytics-ready warehouse layer  
 
 ---
 
-## 🗃️ Entity Relationship Diagram (ERD)
-The ERD shows the relationships across key tables: customers, sellers, orders, products, reviews, and payments.  
+## 📊 Data Architecture & Diagrams
 
-📌 *Insert ERD Here*  
-![ERD Placeholder](path/to/your/erd.png)
+### Entity Relationship Diagram (ERD)
+*(Insert ERD here)*  
+![ERD Placeholder](path/to/erd.png)
 
----
+### Data Architecture Diagram
+*(Insert overall architecture diagram here)*  
+![Architecture Placeholder](path/to/architecture.png)
 
-## 🔍 Exploratory Data Analysis (EDA)
-Key findings from the dataset include:  
-
-1. **Order Distribution by Status**  
-   - Most orders are delivered successfully  
-   - A smaller fraction are canceled or unavailable  
-
-   📊 *Insert Chart Placeholder*  
-
-2. **Top Product Categories by Sales**  
-   - Electronics, furniture, and beauty products dominate sales  
-
-   📊 *Insert Chart Placeholder*  
-
-3. **Geographical Distribution of Customers & Sellers**  
-   - Customers and sellers are spread across Brazil, with concentration in São Paulo  
-
-   📊 *Insert Chart Placeholder*  
-
-4. **Review Score Distribution**  
-   - Majority of reviews are positive (4–5 stars)  
-   - Negative reviews highlight delivery delays  
-
-   📊 *Insert Chart Placeholder*  
+### Data Flow Diagram
+*(Insert DFD here)*  
+![Data Flow Placeholder](path/to/dfd.png)
 
 ---
 
-## 📈 Business Questions Answered
-1. What are the **top-selling product categories**?  
-   📊 *Insert Chart Placeholder*  
+## 🧹 Data Cleaning Process
+The cleaning process was implemented with **SQL queries and stored procedures**, ensuring automation and reproducibility.
 
-2. Which **states/cities contribute the most revenue**?  
-   📊 *Insert Chart Placeholder*  
+- Removed invalid rows where **IDs were null**.  
+- Handled **duplicate reviews** by keeping the latest timestamp.  
+- Fixed **missing product categories** with `"unknown"`.  
+- Converted **text-based dates** to standardized SQL `TIMESTAMP`.  
+- Ensured **referential integrity** between orders, payments, and reviews.
 
-3. What is the **average order delivery time** vs. **promised time**?  
-   📊 *Insert Chart Placeholder*  
+> 🔑 Example: A stored procedure to clean `olist_order_reviews_dataset` handled duplicate reviews and null entries in one execution.
 
-4. How do **payment methods** vary across customers?  
-   📊 *Insert Chart Placeholder*  
+---
 
-5. What are the **factors influencing customer satisfaction** (reviews)?  
-   📊 *Insert Chart Placeholder*  
+## ⚙️ Stored Procedures & Automation
+To demonstrate advanced SQL engineering, multiple **stored procedures** were created:
+
+- **`sp_clean_reviews`** → Cleans review dataset.  
+- **`sp_load_orders`** → Loads and validates orders into the silver layer.  
+- **`sp_generate_kpis`** → Aggregates metrics (revenue, delivery SLA, NPS-like scores).  
+
+This modular approach ensures that the **pipeline can be re-run automatically** without re-writing queries.
+
+---
+
+## 📈 Key Business Questions & Visualizations
+
+### 1. Which categories generate the highest revenue?
+*(Insert chart here)*  
+![Chart Placeholder](path/to/chart1.png)
+
+---
+
+### 2. What are the top states and cities by order volume?
+*(Insert chart here)*  
+![Chart Placeholder](path/to/chart2.png)
+
+---
+
+### 3. How do delivery times compare to estimated delivery times?
+*(Insert chart here)*  
+![Chart Placeholder](path/to/chart3.png)
+
+---
+
+### 4. Customer Review Insights
+- Average rating by category.  
+- Review distribution over time.  
+
+*(Insert chart here)*  
+![Chart Placeholder](path/to/chart4.png)
+
+---
+
+### 5. Repeat Customers & Retention
+- Number of first-time vs returning customers.  
+- Revenue contribution from repeat buyers.  
+
+*(Insert chart here)*  
+![Chart Placeholder](path/to/chart5.png)
+
+---
+
+### 6. Payment Behavior
+- Popular payment methods (credit card, boleto, etc.).  
+- Installment patterns across customers.  
+
+*(Insert chart here)*  
+![Chart Placeholder](path/to/chart6.png)
 
 ---
 
 ## 📊 Dashboard
-An interactive dashboard was created in **Tableau** to visualize trends and insights.  
+A **Tableau/Power BI Dashboard** was built for interactive visualization.  
+Key highlights:
+- **Revenue trends over time**  
+- **Geographic distribution of customers & sellers**  
+- **Category-level performance**  
+- **Delivery SLA tracking**  
 
-👉 [View Tableau Dashboard](https://dummy-link.com) *(replace with real link once published)*  
-
----
-
-## ⚙️ Tech Stack
-- **SQL** (Data cleaning, transformation, and analytics)  
-- **PostgreSQL** (Database)  
-- **Tableau Public** (Visualization)  
-- **DBeaver** (SQL IDE)  
+*(Insert screenshot of dashboard here)*  
+![Dashboard Placeholder](path/to/dashboard.png)
 
 ---
 
-## 🚀 Future Work
-- Add machine learning models to predict delivery delays  
-- Sentiment analysis on customer review text  
-- Extend dashboards with real-time streaming data  
+## 🚀 Pipeline Demonstration
+The project pipeline can be summarized as:
+
+- **Raw Layer (Bronze):** Load CSV data → PostgreSQL.  
+- **Cleaning Layer (Silver):** Automated stored procedures handle cleaning and transformations.  
+- **Analytics Layer (Gold):** Optimized schema for BI dashboards.  
+
+*(Insert pipeline diagram here)*  
+![Pipeline Placeholder](path/to/pipeline.png)
 
 ---
 
-## 📚 References
-- [Olist Dataset on Kaggle](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)  
-- Olist official documentation  
+## 🔮 Future Enhancements
+- Automate ingestion via **Airflow or dbt**.  
+- Implement **CI/CD** for SQL scripts.  
+- Add **machine learning models** for demand forecasting.  
+- Deploy dashboards to **Tableau Public** for sharing.  
+
+---
+
+## 🏆 Project Takeaways
+This project demonstrates:
+- **Data engineering pipeline skills** (bronze/silver/gold).  
+- **SQL cleaning & transformation** (with stored procedures).  
+- **Database design & ERD modeling**.  
+- **Business intelligence** through advanced analytics and dashboards.  
+- Ability to **scale and automate** data workflows.  
+
+This is my **main portfolio project** showing complete ownership of the **data lifecycle** from raw ingestion to actionable insights.
 
 ---
