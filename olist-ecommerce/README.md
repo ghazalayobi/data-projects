@@ -164,6 +164,6 @@ This project demonstrates:
 - **Business intelligence** through advanced analytics and dashboards.  
 - Ability to **scale and automate** data workflows.  
 
-This is my **main portfolio project** showing complete ownership of the **data lifecycle** from raw ingestion to actionable insights.
+
 
 ---
