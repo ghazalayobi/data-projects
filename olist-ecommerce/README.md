@@ -4,7 +4,7 @@
 This project demonstrates an **end-to-end data engineering and analytics pipeline** using the **Olist E-Commerce dataset**.  
 The work includes **data ingestion, cleaning, transformation, pipeline orchestration, database design, stored procedures, and advanced SQL analytics**, culminating in interactive dashboards and insights.  
 
-The goal is to showcase not only **data analysis skills**, but also **data engineering practices** such as building a robust pipeline, handling messy data, and ensuring scalability.
+The goal is to use **data analysis skills**, and **data engineering practices** to build a robust pipeline, handling messy data, and ensuring scalability.
 
 ---
 
