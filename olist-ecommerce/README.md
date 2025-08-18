@@ -12,16 +12,92 @@ The goal is to use **data analysis skills**, and **data engineering practices** 
 The project was structured as a complete data engineering pipeline:
 
 1. **Data Ingestion**  
-   - Raw Olist dataset ingested into the `bronze` layer.
-   - Stored in CSV format and imported into PostgreSQL (via DBeaver/SQL scripts).
+   - Built the **`bronze` layer** as the raw data foundation of the pipeline.  
+   - Data stored in **CSV format** and ingested into **PostgreSQL** using DBeaver/SQL scripts.  
+   - **Schema-First Approach**  
+     - Created dedicated `bronze` tables for each Olist entity (`customers`, `orders`, `products`, `sellers`, `geolocation`, `order_items`, `payments`, `reviews`, and `category_translation`).  
+     - Enforced **primary keys** where available (e.g., `customer_id`, `order_id`) and composite keys for transactional data (e.g., `(order_id, order_item_id)`).  
+     - Ensured correct data types (`VARCHAR`, `NUMERIC`, `DECIMAL`, `TIMESTAMP`) to preserve raw integrity.  
+   - **Example: Orders Table (Bronze Layer)**  
+     ```sql
+     CREATE TABLE bronze.olist_orders_dataset (
+       order_id VARCHAR(50) PRIMARY KEY,
+       customer_id VARCHAR(50),
+       order_status VARCHAR(50),
+       order_purchase_timestamp TIMESTAMP,
+       order_approved_at TIMESTAMP,
+       order_delivered_carrier_date TIMESTAMP,
+       order_delivered_customer_date TIMESTAMP,
+       order_estimated_delivery_date TIMESTAMP
+     );
+     ```  
+   - **Automated Data Loading with Stored Procedure**  
+     - Developed **`bronze.load_bronze()`** procedure to automate ingestion:  
+       - **TRUNCATE** each table for a full refresh.  
+       - **COPY** data from CSV into PostgreSQL tables.  
+       - Logged timings with `RAISE NOTICE` to monitor performance.  
+       - Implemented **exception handling** with `RAISE WARNING` for robust error capture.  
+   - **Example: Data Load (Customers Table)**  
+     ```sql
+     TRUNCATE TABLE bronze.olist_customers_dataset CASCADE;
+     COPY bronze.olist_customers_dataset
+     FROM '/path/to/olist_customers_dataset.csv'
+     DELIMITER ','
+     CSV HEADER;
+     ```  
+   - **Execution**: Data ingestion is triggered with a single command:  
+     ```sql
+     CALL bronze.load_bronze();
+     ```  
+   - **Key Scripts**:  
+     - [Bronze Table Creation](olist-ecommerce/scripts/01_table_creation_bronze.sql)  
+     - [Bronze Data Load Procedure](olist-ecommerce/scripts/02_load_data_bronze.sql)  
 
 2. **Data Cleaning & Transformation**  
-   - Cleaning in `silver` layer:
-     - Removed nulls and duplicates.  
-     - Standardized inconsistent date/time formats.  
-     - Normalized categorical values (e.g., state codes, product categories).  
-     - Handled outliers (e.g., extreme delivery times).  
-   - Implemented **SQL scripts + stored procedures** for automated cleaning.
+   - Implemented in the `silver` layer, where raw ingested data is standardized, validated, and structured for analytics.  
+   - **Schema Design**  
+     - Defined `silver` tables with **primary/foreign keys, audit columns (`dwh_create_date`), and constraints** to ensure integrity.  
+     - Modeled entities such as `customers`, `orders`, `products`, `sellers`, `order_items`, `payments`, and `reviews`.  
+   - **Key Cleaning Rules Applied**  
+     - **City/State Normalization**: Corrected abbreviations (`sp → sao paulo`, `rj → rio de janeiro`, etc.), removed special characters, and standardized casing using `unaccent()` and regex.  
+     - **ZIP Code Standardization**: Ensured consistent **5-digit ZIP codes** across customers, sellers, and geolocations.  
+     - **Referential Integrity Checks**:  
+       - Orders linked only to valid customers.  
+       - Items validated against existing products and sellers.  
+       - Reviews restricted to unique orders (latest review per order kept).  
+     - **Outlier & Quality Handling**:  
+       - Dropped rows with invalid/null IDs.  
+       - Removed negative/zero prices in `order_items` and invalid payments.  
+       - Labeled inconsistent orders with a `row_flag` (e.g., canceled orders that still had delivery timestamps).  
+     - **Derived Columns**: Calculated delivery time intervals (`delivered_customer_date - purchase_timestamp`) and flagged invalid timelines (e.g., delivery before approval).  
+   - **Automated Pipeline with Stored Procedure**  
+     - Created a master procedure: **`silver.load_silver()`**, which:  
+       - Truncates and reloads each table (full refresh).  
+       - Applies cleaning/standardization logic inline during inserts.  
+       - Tracks performance using `RAISE NOTICE` timings.  
+       - Implements **exception handling** to capture and log table-specific errors.  
+   - **Example: City Normalization (Geolocation & Customers)**  
+     ```sql
+     CASE
+         WHEN lower(trim(city)) = 'sp' AND state = 'SP' THEN 'sao paulo'
+         WHEN lower(trim(city)) = 'rj' AND state = 'RJ' THEN 'rio de janeiro'
+         WHEN lower(trim(city)) = 'bh' AND state = 'MG' THEN 'belo horizonte'
+         WHEN regexp_replace(city, '[\\/].*$', '') ~ '^[0-9\s]+$' THEN 'unknown'
+         WHEN lower(unaccent(trim(city))) = '4o centenario' THEN '4º centenario'
+         ELSE unaccent(
+             regexp_replace(
+                 regexp_replace(
+                     lower(trim(both from regexp_replace(city, '[\\/].*$', ''))),
+                     '[^a-z\s]', '',
+                     'g'
+                 ),
+                 '\s+', ' ',
+                 'g'
+             )
+         )
+     END AS city
+     ```  
+   - **Key Script**: [`silver.load_silver()`](#) – Orchestrates the full transformation pipeline.  
 
 3. **Enrichment & Business Logic**  
    - In `gold` layer:
