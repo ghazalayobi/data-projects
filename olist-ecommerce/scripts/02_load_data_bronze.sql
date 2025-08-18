@@ -35,7 +35,7 @@ BEGIN
 		-- 1. GEOLOCATION
 		RAISE NOTICE 'Loading: olist_geolocation_dataset';
 		start_time := clock_timestamp();
-		TRUNCATE TABLE bronze.olist_geolocation_dataset;
+		TRUNCATE TABLE bronze.olist_geolocation_dataset CASCADE;
 		COPY bronze.olist_geolocation_dataset
 		FROM '/Users/ghazalayobi/portfolio_projects/olist/data/olist_geolocation_dataset.csv'
 		DELIMITER ','
@@ -50,7 +50,7 @@ BEGIN
     BEGIN
         RAISE NOTICE 'Loading: olist_customers_dataset';
         start_time := clock_timestamp();
-        TRUNCATE TABLE bronze.olist_customers_dataset;
+        TRUNCATE TABLE bronze.olist_customers_dataset CASCADE;
         COPY bronze.olist_customers_dataset
         FROM '/Users/ghazalayobi/portfolio_projects/olist/data/olist_customers_dataset.csv'
         DELIMITER ','
@@ -65,7 +65,7 @@ BEGIN
     BEGIN
         RAISE NOTICE 'Loading: olist_sellers_dataset';
         start_time := clock_timestamp();
-        TRUNCATE TABLE bronze.olist_sellers_dataset;
+        TRUNCATE TABLE bronze.olist_sellers_dataset CASCADE;
         COPY bronze.olist_sellers_dataset
         FROM '/Users/ghazalayobi/portfolio_projects/olist/data/olist_sellers_dataset.csv'
         DELIMITER ','
@@ -80,7 +80,7 @@ BEGIN
     RAISE NOTICE 'Loading: olist_products_dataset';
     BEGIN
         start_time := clock_timestamp();
-        TRUNCATE TABLE bronze.olist_products_dataset;
+        TRUNCATE TABLE bronze.olist_products_dataset CASCADE;
         COPY bronze.olist_products_dataset
         FROM '/Users/ghazalayobi/portfolio_projects/olist/data/olist_products_dataset.csv'
         DELIMITER ','
@@ -92,11 +92,11 @@ BEGIN
     END;
 
     -- 5. PRODUCT CATEGORY TRANSLATION
-    RAISE NOTICE 'Loading: product_category_name_translation';
+    RAISE NOTICE 'Loading: product_category_translation';
     BEGIN
         start_time := clock_timestamp();
-        TRUNCATE TABLE bronze.product_category_name_translation;
-        COPY bronze.product_category_name_translation
+        TRUNCATE TABLE bronze.product_category_translation CASCADE;
+        COPY bronze.product_category_translation
         FROM '/Users/ghazalayobi/portfolio_projects/olist/data/product_category_name_translation.csv'
         DELIMITER ','
         CSV HEADER;
@@ -110,7 +110,7 @@ BEGIN
     RAISE NOTICE 'Loading: olist_orders_dataset';
     BEGIN
         start_time := clock_timestamp();
-        TRUNCATE TABLE bronze.olist_orders_dataset;
+        TRUNCATE TABLE bronze.olist_orders_dataset CASCADE;
         COPY bronze.olist_orders_dataset
         FROM '/Users/ghazalayobi/portfolio_projects/olist/data/olist_orders_dataset.csv'
         DELIMITER ','
@@ -125,7 +125,7 @@ BEGIN
     RAISE NOTICE 'Loading: olist_order_items_dataset';
     BEGIN
         start_time := clock_timestamp();
-        TRUNCATE TABLE bronze.olist_order_items_dataset;
+        TRUNCATE TABLE bronze.olist_order_items_dataset CASCADE;
         COPY bronze.olist_order_items_dataset
         FROM '/Users/ghazalayobi/portfolio_projects/olist/data/olist_order_items_dataset.csv'
         DELIMITER ','
@@ -140,7 +140,7 @@ BEGIN
     RAISE NOTICE 'Loading: olist_order_payments_dataset';
     BEGIN
         start_time := clock_timestamp();
-        TRUNCATE TABLE bronze.olist_order_payments_dataset;
+        TRUNCATE TABLE bronze.olist_order_payments_dataset CASCADE;
         COPY bronze.olist_order_payments_dataset
         FROM '/Users/ghazalayobi/portfolio_projects/olist/data/olist_order_payments_dataset.csv'
         DELIMITER ','
@@ -155,7 +155,7 @@ BEGIN
     RAISE NOTICE 'Loading: olist_order_reviews_dataset';
     BEGIN
         start_time := clock_timestamp();
-        TRUNCATE TABLE bronze.olist_order_reviews_dataset;
+        TRUNCATE TABLE bronze.olist_order_reviews_dataset CASCADE;
         COPY bronze.olist_order_reviews_dataset
         FROM '/Users/ghazalayobi/portfolio_projects/olist/data/olist_order_reviews_dataset.csv'
         DELIMITER ','

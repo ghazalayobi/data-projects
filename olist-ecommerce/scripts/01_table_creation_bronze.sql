@@ -11,7 +11,6 @@ Script Purpose:
 */
 
 
-
 -- Create schema 
 CREATE SCHEMA IF NOT EXISTS bronze;
 
@@ -20,9 +19,9 @@ CREATE SCHEMA IF NOT EXISTS bronze;
 -- =========================
 DROP TABLE IF EXISTS bronze.olist_geolocation_dataset CASCADE;
 CREATE TABLE bronze.olist_geolocation_dataset (
-  geolocation_zip_code_prefix VARCHAR(20),
-  geolocation_lat NUMERIC,
-  geolocation_lng NUMERIC,
+  geolocation_zip_code_prefix VARCHAR(9),
+  geolocation_lat DECIMAL(9,6),
+  geolocation_lng DECIMAL(9,6),
   geolocation_city VARCHAR(100),
   geolocation_state VARCHAR(10)
 );
@@ -34,7 +33,7 @@ DROP TABLE IF EXISTS bronze.olist_customers_dataset CASCADE;
 CREATE TABLE bronze.olist_customers_dataset (
   customer_id VARCHAR(50) PRIMARY KEY,
   customer_unique_id VARCHAR(50),
-  customer_zip_code_prefix VARCHAR(20),
+  customer_zip_code_prefix VARCHAR(9),
   customer_city VARCHAR(100),
   customer_state VARCHAR(10)
 );
@@ -45,7 +44,7 @@ CREATE TABLE bronze.olist_customers_dataset (
 DROP TABLE IF EXISTS bronze.olist_sellers_dataset CASCADE;
 CREATE TABLE bronze.olist_sellers_dataset (
   seller_id VARCHAR(50) PRIMARY KEY,
-  seller_zip_code_prefix VARCHAR(20),
+  seller_zip_code_prefix VARCHAR(9),
   seller_city VARCHAR(100),
   seller_state VARCHAR(10)
 );
