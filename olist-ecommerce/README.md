@@ -209,9 +209,6 @@ The project was structured as a complete data engineering pipeline:
 - **Average Review Score by Category**  
 ![Review Score by Category](https://github.com/ghazalayobi/data-projects/blob/main/olist-ecommerce/docs/EDA_plot/top_categories_by_review_score.png)  
 
-- **Sales Over Time**  
-![Sales Over Time](path_to_image/sales_over_time.png)  
-
 - **Top Categories by Sales**  
 ![Top cATEGORIES](https://github.com/ghazalayobi/data-projects/blob/main/olist-ecommerce/docs/EDA_plot/top_categories_by_sales.png)  
 
