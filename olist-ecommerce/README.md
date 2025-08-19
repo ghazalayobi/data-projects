@@ -84,13 +84,18 @@ The project was structured as a complete data engineering pipeline:
          )
      END AS city
      ```  
-   - **Key Script**: [`silver.load_silver()`](#) – Orchestrates the full transformation pipeline.  
+   - **Key Script**:
+      - [Silver Table Creation](https://github.com/ghazalayobi/data-projects/blob/main/olist-ecommerce/scripts/03_table_creation_silver.sql)
+      - [Test and Checks Script](https://github.com/ghazalayobi/data-projects/blob/main/olist-ecommerce/scripts/04_test_script_bronze.sql)
+      - [Silver Data Load Procedure](https://github.com/ghazalayobi/data-projects/blob/main/olist-ecommerce/scripts/05_load_silver.sql)  
 
 3. **Enrichment & Business Logic**  
    - In `gold` layer:
      - Created fact and dimension tables.  
      - Derived KPIs: revenue, repeat customers, delivery delays, etc.  
      - Built star schema for efficient querying.
+   - **Key Script**:
+      - [Gold Layer Dimensions and Facts](https://github.com/ghazalayobi/data-projects/blob/main/olist-ecommerce/scripts/07_load_gold_layer.sql)
 
 4. **Orchestration & Pipeline Management**  
    - Developed a reproducible pipeline using SQL scripts.  
