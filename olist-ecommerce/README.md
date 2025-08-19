@@ -37,8 +37,8 @@ The project was structured as a complete data engineering pipeline:
      CALL bronze.load_bronze();
      ```  
    - **Key Scripts**:  
-     - [Bronze Table Creation](olist-ecommerce/scripts/01_table_creation_bronze.sql)  
-     - [Bronze Data Load Procedure](olist-ecommerce/scripts/02_load_data_bronze.sql)  
+     - [Bronze Table Creation](https://github.com/ghazalayobi/data-projects/blob/main/olist-ecommerce/scripts/01_table_creation_bronze.sql)  
+     - [Bronze Data Load Procedure](https://github.com/ghazalayobi/data-projects/blob/main/olist-ecommerce/scripts/02_load_data_bronze.sql)  
 
 2. **Data Cleaning & Transformation**  
    - Implemented in the `silver` layer, where raw ingested data is standardized, validated, and structured for analytics.  
