@@ -194,9 +194,8 @@ The project was structured as a complete data engineering pipeline:
 
 
 
-## Visualizations
+## Some Visualizations for EDA
 
-*(Add your plots/images in these sections)*
 
 - **Freight vs Order Price**  
 `![Freight vs Order Price](path_to_image/freight_vs_price.png)`  
