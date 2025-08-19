@@ -123,7 +123,109 @@ The project was structured as a complete data engineering pipeline:
 ![Data Flow Placeholder](path/to/dfd.png)
 
 ---
+## Key Insights from EDA 
 
+### 1. Orders & Sales Overview  
+- Dataset covers **2016-09-04 to 2018-10-17** with **97.02% orders delivered**.  
+- No duplicate `order_id` exists.  
+- Sales peaked in **Nov 2017 ($1M+)** and **Apr–May 2018 (~$996K)**, showing strong **seasonal demand**.  
+- Order volumes are highest on **Mondays (16,196)** and lowest on **Saturdays (10,887)**.  
+- **Seasonality:** peak order months are **August, May, July**, while **September, October, December** see dips.  
+
+
+### 2. Pricing & Freight Dynamics  
+- **Order item price range:** $0.85 – $6,735 (median $74.99).  
+- **Freight value distribution:** Avg $20.03, median $16.27, with most orders in the **$10–50 range (92K orders)**.  
+- Correlation between **freight cost and order price** is **moderately positive (0.41)**.  
+- A small group of sellers incur **very high freight costs (> $150 per order)**.  
+
+
+### 3. Delivery Performance  
+- **Overall delivery times:** median **10 days**, avg **12.5 days**, ranging from **12 hours to ~7 months**.  
+- Delivery efficiency **improved over time**, from ~24 days (Sep 2016) to ~7 days (Aug 2018).  
+- **Regional patterns:**  
+  - Fastest: **SP (8.3 days)**  
+  - Slowest: **RR (29 days)**  
+- **Category patterns:**  
+  - Fastest: **Arts & Craftsmanship (5.3 days)**, **La Cuisine (7 days)**  
+  - Slowest: **Office furniture (15.3 days)**, **Security & Services (15 days)**  
+- Some cities show **suspiciously fast deliveries → possible data discrepancies**.  
+
+
+### 4. Customer Insights  
+- Total customers: **96,096**  
+- Repeat buyers: **2,997 (~3.1%) → low loyalty**  
+- Customer concentration: majority in **SP, RJ, MG** (same as top sales states).  
+
+
+### 5. Seller Insights  
+- Sellers concentrated in **SP, PR, MG**.  
+- Top 10 sellers generate **$229K+** (leading seller) with ~1,132 orders.  
+- Avg freight for top sellers ranges **$16–38**, below the extreme freight outliers (> $150).  
+
+
+### 6. Product Categories & Reviews  
+- **Highest-rated categories:** CDs/DVDs/Musicals (4.64), Children’s Clothing (4.50), Books (4.45).  
+- **Lowest-rated categories:** Security & Services (2.50), Diapers & Hygiene (3.26).  
+- **Review & delivery link:** Faster deliveries → higher ratings.  
+  - 5-star avg delivery: **9.8 days**  
+  - 1-star avg delivery: **12.4 days**  
+- **Review & pricing link:** Lower ratings are associated with slightly higher order prices:  
+  - Score 1 → $127.56  
+  - Score 5 → $121.42  
+
+
+### 7. Payments & Order Value  
+- **Payment split:** Installments 51.46%, single payments 49.33%.  
+- **Most common:** 1 installment (52K+ orders).  
+- **Installments linked to higher order values:**  
+  - 1 installment → $112 avg  
+  - 10 installments → $415 avg  
+  - 20 installments → $616 avg  
+
+
+## 🔑 Takeaways  
+1. **Delivery time strongly influences customer satisfaction** → faster delivery = higher reviews.  
+2. **Regional and category disparities** exist in delivery speed, suggesting logistics optimization opportunities.  
+3. **Customer loyalty is low (~3%)**, despite high delivery rates, meaning retention strategies are needed.  
+4. **Installments drive higher-value purchases**, indicating a key lever for revenue growth.  
+5. **Freight cost correlates with order price**, but some sellers have unusually high costs worth auditing.  
+6. **Seasonality and weekdays impact sales volume**, with Monday and summer months as sales peaks.  
+
+
+
+## Visualizations
+
+*(Add your plots/images in these sections)*
+
+- **Freight vs Order Price**  
+`![Freight vs Order Price](path_to_image/freight_vs_price.png)`  
+
+- **Orders by Day of the Week**  
+`![Orders by Day](path_to_image/orders_by_day.png)`  
+
+- **Average Delivery Time by City**  
+`![Delivery Time by City](path_to_image/delivery_time_city.png)`  
+
+- **Average Review Score by Category**  
+`![Review Score by Category](path_to_image/review_score_category.png)`  
+
+- **Sales Over Time**  
+`![Sales Over Time](path_to_image/sales_over_time.png)`  
+
+- **Top States by Sales**  
+`![Top States](path_to_image/top_states_sales.png)`  
+
+- **Sellers with Highest Freight Costs**  
+`![Top Sellers](path_to_image/top_sellers_freight.png)`  
+
+- **Payment Methods Distribution**  
+`![Payment Methods](path_to_image/payment_methods.png)`  
+
+
+
+
+---
 
 ## 📈 Key Business Questions & Visualizations
 
