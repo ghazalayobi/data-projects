@@ -62,7 +62,7 @@ The project was structured as a complete data engineering pipeline:
        - Truncates and reloads each table (full refresh).  
        - Applies cleaning/standardization logic inline during inserts.  
        - Tracks performance using `RAISE NOTICE` timings.  
-       - Implements **exception handling** to capture and log table-specific errors.  
+       - Implements **exception handling** to capture and log table-specific errors.
    - **Example: City Normalization (Geolocation & Customers)**  
      ```sql
      CASE
@@ -83,7 +83,11 @@ The project was structured as a complete data engineering pipeline:
              )
          )
      END AS city
-     ```  
+     ```
+   -  **Silver Layer Loading Features** 
+      - Full refresh using `TRUNCATE` for each table.  
+      - Progress tracking and execution duration logging via `RAISE NOTICE`.  
+      - Error handling for each table to prevent pipeline failures.
    - **Key Script**:
       - [Silver Table Creation](https://github.com/ghazalayobi/data-projects/blob/main/olist-ecommerce/scripts/03_table_creation_silver.sql)
       - [Test and Checks Script](https://github.com/ghazalayobi/data-projects/blob/main/olist-ecommerce/scripts/04_test_script_bronze.sql)
@@ -120,28 +124,6 @@ The project was structured as a complete data engineering pipeline:
 
 ---
 
-# 🧹 Data Cleaning & Silver Layer Loading
-
-The **data cleaning and Silver Layer loading process** was implemented with **SQL queries and stored procedures**, ensuring automation, reproducibility, and robust error handling.
-
-## Key Cleaning Steps
-- **Removed invalid rows** where IDs or critical fields were `NULL`.  
-- **Handled duplicates** in reviews by keeping the latest timestamp per order.  
-- **Standardized missing or invalid values**:
-  - Product categories set to `"unknown"` if missing.  
-  - City names normalized and special cases corrected (e.g., `"sp"` → `"sao paulo"`).  
-- **Converted text-based dates** to standardized SQL `TIMESTAMP`.  
-- **Ensured referential integrity** across orders, payments, items, and reviews.  
-- **Added derived columns**:
-  - `delivery_time` (interval between purchase and delivery).  
-  - `row_flag` to indicate valid vs invalid rows for orders.
-
-## Silver Layer Loading Features
-- **Full refresh** using `TRUNCATE` for each table.  
-- **Progress tracking** and execution duration logging via `RAISE NOTICE`.  
-- **Error handling** for each table to prevent pipeline failures.
-
----
 
 ## 📈 Key Business Questions & Visualizations
 
