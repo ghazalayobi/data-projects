@@ -198,25 +198,25 @@ The project was structured as a complete data engineering pipeline:
 
 
 - **Delivery Time Distribution**  
-`![delivery_time_distribution](https://github.com/ghazalayobi/data-projects/blob/main/olist-ecommerce/docs/EDA_plot/delivery_time_distribution.png)`  
+![delivery_time_distribution](https://github.com/ghazalayobi/data-projects/blob/main/olist-ecommerce/docs/EDA_plot/delivery_time_distribution.png) 
 
 - **Orders Per Month**  
-`![orders_per_month](https://github.com/ghazalayobi/data-projects/blob/main/olist-ecommerce/docs/EDA_plot/orders_per_month.png)`  
+![orders_per_month](https://github.com/ghazalayobi/data-projects/blob/main/olist-ecommerce/docs/EDA_plot/orders_per_month.png)  
 
 - **Payment Type**  
-`![payment_type](https://github.com/ghazalayobi/data-projects/blob/main/olist-ecommerce/docs/EDA_plot/payment_type_distribution.png)`  
+![payment_type](https://github.com/ghazalayobi/data-projects/blob/main/olist-ecommerce/docs/EDA_plot/payment_type_distribution.png)  
 
 - **Average Review Score by Category**  
-`![Review Score by Category](https://github.com/ghazalayobi/data-projects/blob/main/olist-ecommerce/docs/EDA_plot/top_categories_by_review_score.png)`  
+![Review Score by Category](https://github.com/ghazalayobi/data-projects/blob/main/olist-ecommerce/docs/EDA_plot/top_categories_by_review_score.png)  
 
 - **Sales Over Time**  
-`![Sales Over Time](path_to_image/sales_over_time.png)`  
+![Sales Over Time](path_to_image/sales_over_time.png)  
 
 - **Top Categories by Sales**  
-`![Top cATEGORIES](https://github.com/ghazalayobi/data-projects/blob/main/olist-ecommerce/docs/EDA_plot/top_categories_by_sales.png)`  
+![Top cATEGORIES](https://github.com/ghazalayobi/data-projects/blob/main/olist-ecommerce/docs/EDA_plot/top_categories_by_sales.png)  
 
 - **Sellers with Highest Sales**  
-`![Top Sellers](https://github.com/ghazalayobi/data-projects/blob/main/olist-ecommerce/docs/EDA_plot/top_sellers_by_sales.png)`  
+![Top Sellers](https://github.com/ghazalayobi/data-projects/blob/main/olist-ecommerce/docs/EDA_plot/top_sellers_by_sales.png) 
   
 
 ---
