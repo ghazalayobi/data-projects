@@ -112,8 +112,7 @@ The project was structured as a complete data engineering pipeline:
 ![ERD](https://github.com/ghazalayobi/data-projects/blob/main/olist-ecommerce/docs/ERD.png)
 
 ### Data Architecture Diagram
-*(Insert overall architecture diagram here)*  
-![Architecture Placeholder](path/to/architecture.png)
+![Data Architecture](https://github.com/ghazalayobi/data-projects/blob/main/olist-ecommerce/docs/data_architecture_olist.drawio.png)
 
 ### Data Flow Diagram
 *(Insert DFD here)*  
