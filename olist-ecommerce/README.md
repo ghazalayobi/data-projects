@@ -109,8 +109,7 @@ The project was structured as a complete data engineering pipeline:
 ## 📊 Data Architecture & Diagrams
 
 ### Entity Relationship Diagram (ERD)
-*(Insert ERD here)*  
-![ERD Placeholder](path/to/erd.png)
+![ERD](https://github.com/ghazalayobi/data-projects/blob/main/olist-ecommerce/docs/ERD.png)
 
 ### Data Architecture Diagram
 *(Insert overall architecture diagram here)*  
