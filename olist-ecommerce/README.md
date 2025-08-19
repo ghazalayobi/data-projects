@@ -197,32 +197,27 @@ The project was structured as a complete data engineering pipeline:
 ## Some Visualizations for EDA
 
 
-- **Freight vs Order Price**  
-`![Freight vs Order Price](path_to_image/freight_vs_price.png)`  
+- **Delivery Time Distribution**  
+`![delivery_time_distribution](https://github.com/ghazalayobi/data-projects/blob/main/olist-ecommerce/docs/EDA_plot/delivery_time_distribution.png)`  
 
-- **Orders by Day of the Week**  
-`![Orders by Day](path_to_image/orders_by_day.png)`  
+- **Orders Per Month**  
+`![orders_per_month](https://github.com/ghazalayobi/data-projects/blob/main/olist-ecommerce/docs/EDA_plot/orders_per_month.png)`  
 
-- **Average Delivery Time by City**  
-`![Delivery Time by City](path_to_image/delivery_time_city.png)`  
+- **Payment Type**  
+`![payment_type](https://github.com/ghazalayobi/data-projects/blob/main/olist-ecommerce/docs/EDA_plot/payment_type_distribution.png)`  
 
 - **Average Review Score by Category**  
-`![Review Score by Category](path_to_image/review_score_category.png)`  
+`![Review Score by Category](https://github.com/ghazalayobi/data-projects/blob/main/olist-ecommerce/docs/EDA_plot/top_categories_by_review_score.png)`  
 
 - **Sales Over Time**  
 `![Sales Over Time](path_to_image/sales_over_time.png)`  
 
-- **Top States by Sales**  
-`![Top States](path_to_image/top_states_sales.png)`  
+- **Top Categories by Sales**  
+`![Top cATEGORIES](https://github.com/ghazalayobi/data-projects/blob/main/olist-ecommerce/docs/EDA_plot/top_categories_by_sales.png)`  
 
-- **Sellers with Highest Freight Costs**  
-`![Top Sellers](path_to_image/top_sellers_freight.png)`  
-
-- **Payment Methods Distribution**  
-`![Payment Methods](path_to_image/payment_methods.png)`  
-
-
-
+- **Sellers with Highest Sales**  
+`![Top Sellers](https://github.com/ghazalayobi/data-projects/blob/main/olist-ecommerce/docs/EDA_plot/top_sellers_by_sales.png)`  
+  
 
 ---
 
