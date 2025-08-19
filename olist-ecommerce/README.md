@@ -120,27 +120,26 @@ The project was structured as a complete data engineering pipeline:
 
 ---
 
-## 🧹 Data Cleaning Process
-The cleaning process was implemented with **SQL queries and stored procedures**, ensuring automation and reproducibility.
+# 🧹 Data Cleaning & Silver Layer Loading
 
-- Removed invalid rows where **IDs were null**.  
-- Handled **duplicate reviews** by keeping the latest timestamp.  
-- Fixed **missing product categories** with `"unknown"`.  
-- Converted **text-based dates** to standardized SQL `TIMESTAMP`.  
-- Ensured **referential integrity** between orders, payments, and reviews.
+The **data cleaning and Silver Layer loading process** was implemented with **SQL queries and stored procedures**, ensuring automation, reproducibility, and robust error handling.
 
-> 🔑 Example: A stored procedure to clean `olist_order_reviews_dataset` handled duplicate reviews and null entries in one execution.
+## Key Cleaning Steps
+- **Removed invalid rows** where IDs or critical fields were `NULL`.  
+- **Handled duplicates** in reviews by keeping the latest timestamp per order.  
+- **Standardized missing or invalid values**:
+  - Product categories set to `"unknown"` if missing.  
+  - City names normalized and special cases corrected (e.g., `"sp"` → `"sao paulo"`).  
+- **Converted text-based dates** to standardized SQL `TIMESTAMP`.  
+- **Ensured referential integrity** across orders, payments, items, and reviews.  
+- **Added derived columns**:
+  - `delivery_time` (interval between purchase and delivery).  
+  - `row_flag` to indicate valid vs invalid rows for orders.
 
----
-
-## ⚙️ Stored Procedures & Automation
-To demonstrate advanced SQL engineering, multiple **stored procedures** were created:
-
-- **`sp_clean_reviews`** → Cleans review dataset.  
-- **`sp_load_orders`** → Loads and validates orders into the silver layer.  
-- **`sp_generate_kpis`** → Aggregates metrics (revenue, delivery SLA, NPS-like scores).  
-
-This modular approach ensures that the **pipeline can be re-run automatically** without re-writing queries.
+## Silver Layer Loading Features
+- **Full refresh** using `TRUNCATE` for each table.  
+- **Progress tracking** and execution duration logging via `RAISE NOTICE`.  
+- **Error handling** for each table to prevent pipeline failures.
 
 ---
 
