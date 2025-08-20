@@ -272,7 +272,7 @@ Olist’s marketplace is **credit-card driven**, highly concentrated in **São P
 - Balance seller focus between **high sales** and **customer satisfaction**.  
 
 
--- 
+--- 
 ## 📈 Key Business Questions & Visualizations
 
 ### 1. Which categories generate the highest revenue?
