@@ -275,9 +275,8 @@ Olist’s marketplace is **credit-card driven**, highly concentrated in **São P
 --- 
 ## 📈 Key Business Questions & Visualizations
 
-### 1. Which categories generate the highest revenue?
-*(Insert chart here)*  
-![Chart Placeholder](path/to/chart1.png)
+### 1. What is average delivery duration by weekday?
+![Chart](https://github.com/ghazalayobi/data-projects/blob/main/olist-ecommerce/docs/analytical_plots/Deliveries_and_Avg_Delivery_Days_by_Weekday.png)
 
 ---
 
