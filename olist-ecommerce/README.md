@@ -217,7 +217,62 @@ The project was structured as a complete data engineering pipeline:
   
 
 ---
+## 📊 Olist E-Commerce Project – Business Insights
 
+### A. Payment & Transaction Analysis
+- **Credit cards** dominate payments (**74% of orders**) with the **highest average order value ($146.91)** → preferred for higher-ticket purchases.  
+- **Boleto payments** (Brazilian bank slips) make up ~19% of orders but take the **longest to confirm (33 hours)**, delaying fulfillment.  
+
+### B. Customer Behavior & Retention
+- **Customer acquisition** grew sharply from 2017, peaking in **Nov 2017 (7,544 new customers)** and sustaining growth until mid-2018 before dropping after Sep 2018.  
+- **Time between first and second purchases** is long (**500+ days** for many repeat customers), suggesting **weak retention & engagement**.  
+- **Top lifetime value (LTV) customers** can generate **thousands of dollars per month** (e.g., ~$13.6K in Sep 2017), though these are **rare outliers**.  
+
+
+### C. Cart Size & Order Composition
+- **Average cart value per order:** $160.78.  
+- **Average items per order:** ~1.14 → most customers buy **only a single item**, showing low bundling/cross-selling.  
+- **Cart value by region:**  
+  - Higher in **Paraíba (PB), Acre (AC), and Amapá (AP)** ($240–260).  
+  - Lower in **São Paulo (SP)** despite higher order volume.  
+
+
+### D. Seller Performance
+- **Top 10 sellers** generate revenues of **$130K–$228K**, but **review scores vary (3.3 – 4.3)** → **sales ≠ customer satisfaction**.  
+- **Seller location impacts logistics:**  
+  - **Ceará (CE), Amazonas (AM):** longest delivery delays (~19 days).  
+  - **São Paulo (SP), Rio de Janeiro (RJ):** faster (~8–9 days).  
+- **Freight costs are uneven:**  
+  - **Rondônia (RO):** $50.91 per order (very high).  
+  - **São Paulo (SP):** ~$21 (much lower).  
+
+
+### E. Delivery & Review Impact
+- **Severe delivery delays (100+ days)** → strongly linked to **low reviews (1–2 stars)**.  
+- **Moderate delays** can still yield **mixed reviews** (some 5 stars), showing **product quality sometimes offsets delivery issues**.  
+
+
+### F. Product & Regional Insights
+- **São Paulo (SP)** dominates nearly every product category, leading revenue across home goods, beauty, gifts, sports, and electronics.  
+- **Top categories by revenue (SP):**  
+  1. Bed, bath & table → **~$556K**  
+  2. Beauty & health → **~$520K**  
+  3. Gifts & watches → **~$463K**  
+  4. Sports & leisure → **~$442K**  
+  5. Electronics accessories → **~$397K**  
+
+
+### ✅ Overall Summary
+Olist’s marketplace is **credit-card driven**, highly concentrated in **São Paulo**, with **low repeat purchase rates** and **logistics challenges** in remote states.  
+
+**Opportunities for growth:**  
+- Improve **customer retention** & encourage repeat purchases.  
+- Reduce **delivery delays** and optimize **freight logistics**.  
+- Encourage **multi-item orders** via bundling & promotions.  
+- Balance seller focus between **high sales** and **customer satisfaction**.  
+
+
+-- 
 ## 📈 Key Business Questions & Visualizations
 
 ### 1. Which categories generate the highest revenue?
