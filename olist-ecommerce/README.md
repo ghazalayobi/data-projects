@@ -278,49 +278,30 @@ Olist’s marketplace is **credit-card driven**, highly concentrated in **São P
 ### 1. What is average delivery duration by weekday?
 ![Chart](https://github.com/ghazalayobi/data-projects/blob/main/olist-ecommerce/docs/analytical_plots/Deliveries_and_Avg_Delivery_Days_by_Weekday.png)
 
----
 
-### 2. What are the top states and cities by order volume?
-*(Insert chart here)*  
-![Chart Placeholder](path/to/chart2.png)
+### 2. Which days of the week have the highest average order value and order count?
+![Chart](https://github.com/ghazalayobi/data-projects/blob/main/olist-ecommerce/docs/analytical_plots/Revenue_Orders_and_Avg_Order_Value_by_Weekday.png)
 
----
 
-### 3. How do delivery times compare to estimated delivery times?
-*(Insert chart here)*  
-![Chart Placeholder](path/to/chart3.png)
+### 3. How does the seller’s location (state/region) affect the average delivery delay?
+![Chart](https://github.com/ghazalayobi/data-projects/blob/main/olist-ecommerce/docs/analytical_plots/Delivery_Delay_Metrics_by_Seller_State.png)
 
----
 
-### 4. Customer Review Insights
-- Average rating by category.  
-- Review distribution over time.  
+### 4. How installments correlate with delivery time?
+![Chart](https://github.com/ghazalayobi/data-projects/blob/main/olist-ecommerce/docs/analytical_plots/Order_Count_and_Average_Delivery_Days_by_Installments.png)
 
-*(Insert chart here)*  
-![Chart Placeholder](path/to/chart4.png)
 
----
+### 5. What is seller location impact on freight cost per order?
+![Chart](https://github.com/ghazalayobi/data-projects/blob/main/olist-ecommerce/docs/analytical_plots/Orders_Freight_and_Total_per_Order_by_Seller_State.png)
 
-### 5. Repeat Customers & Retention
-- Number of first-time vs returning customers.  
-- Revenue contribution from repeat buyers.  
-
-*(Insert chart here)*  
-![Chart Placeholder](path/to/chart5.png)
-
----
 
 ### 6. Payment Behavior
-- Popular payment methods (credit card, boleto, etc.).  
-- Installment patterns across customers.  
-
-*(Insert chart here)*  
-![Chart Placeholder](path/to/chart6.png)
+![Chart](https://github.com/ghazalayobi/data-projects/blob/main/olist-ecommerce/docs/analytical_plots/Payment_Type_Analysis.png)
 
 ---
 
 ## 📊 Dashboard
-A **Tableau/Power BI Dashboard** was built for interactive visualization.  
+A **Tableau Dashboard** was built for interactive visualization.  
 Key highlights:
 - **Revenue trends over time**  
 - **Geographic distribution of customers & sellers**  
@@ -332,21 +313,8 @@ Key highlights:
 
 ---
 
-## 🚀 Pipeline Demonstration
-The project pipeline can be summarized as:
-
-- **Raw Layer (Bronze):** Load CSV data → PostgreSQL.  
-- **Cleaning Layer (Silver):** Automated stored procedures handle cleaning and transformations.  
-- **Analytics Layer (Gold):** Optimized schema for BI dashboards.  
-
-*(Insert pipeline diagram here)*  
-![Pipeline Placeholder](path/to/pipeline.png)
-
----
-
 ## 🔮 Future Enhancements
 - Add **machine learning models** for demand forecasting.  
-- Deploy dashboards to **Tableau Public** for sharing.  
 
 ---
 
