@@ -118,9 +118,6 @@ The project was structured as a complete data engineering pipeline:
 ### Data Architecture Diagram
 ![Data Architecture](https://github.com/ghazalayobi/data-projects/blob/main/olist-ecommerce/docs/data_architecture_olist.drawio.png)
 
-### Data Flow Diagram
-*(Insert DFD here)*  
-![Data Flow Placeholder](path/to/dfd.png)
 
 ---
 ## Key Insights from EDA 
@@ -306,10 +303,9 @@ Key highlights:
 - **Revenue trends over time**  
 - **Geographic distribution of customers & sellers**  
 - **Category-level performance**  
-- **Delivery SLA tracking**  
-
-*(Insert screenshot of dashboard here)*  
-![Dashboard Placeholder](path/to/dashboard.png)
+[Dashboard link](https://public.tableau.com/views/OlistE-commerce_17569615225770/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+ 
+![Dashboard Placeholder](https://github.com/ghazalayobi/data-projects/blob/main/olist-ecommerce/docs/olist_ecommerce_dashboard_Ghazal_Ayobi.png)
 
 ---
 
