@@ -15,7 +15,7 @@ Each folder in this repository represents a standalone project, including all ne
 
 | Project | Tools | Summary |
 |--------|-------|---------|
-| **Sales Analytics Dashboard** | SQL, Power BI | Analyzed transactional sales data and created an interactive dashboard to highlight KPIs. |
+| **Olist E-commerce Data Analytics and Engineering Project** | SQL, Tableau | Analyzed transactional sales data and created an interactive dashboard to highlight KPIs. |
 | **Customer Churn Prediction** | Python, scikit-learn | Built a classification model to predict churn using customer behavior features. |
 | **COVID-19 Dashboard** | R, ggplot2, Shiny | Built an interactive dashboard to visualize global COVID trends over time. |
 
