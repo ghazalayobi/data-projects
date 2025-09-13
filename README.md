@@ -15,9 +15,8 @@ Each folder in this repository represents a standalone project, including all ne
 
 | Project | Tools | Summary |
 |--------|-------|---------|
-| **Olist E-commerce Data Analytics and Engineering Project** | SQL, Tableau | Analyzed transactional sales data and created an interactive dashboard to highlight KPIs. |
-| **Customer Churn Prediction** | Python, scikit-learn | Built a classification model to predict churn using customer behavior features. |
-| **COVID-19 Dashboard** | R, ggplot2, Shiny | Built an interactive dashboard to visualize global COVID trends over time. |
+| **Olist E-commerce Data Analytics and Engineering Project** | SQL, Tableau | Analyzed sales data and created an interactive dashboard to highlight KPIs. |
+| **Custom ETFs - Stock Analytics Project** | Python, SQL, Tableau | Used yahoo finance API to Analyze Fed rate cuts impacts on custom ETFs and market indices. |
 
 > 🔎 *More projects and case studies coming soon!*
 
