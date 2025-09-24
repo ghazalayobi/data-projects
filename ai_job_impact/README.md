@@ -121,7 +121,7 @@ To complement SQL analysis, I designed an **interactive Tableau dashboard**:
 - 👥 **Diversity & Remote Work** – dual-axis charts for gender ratio vs. remote work.  
 - 📌 **Summary KPIs** – total jobs gained/lost, average salary, % remote roles.  
 
-[![AI Job Impact Dashboard](tableau_dashboard/dashboard_screenshots/dashboard_preview.png)](https://public.tableau.com/views/AI_Job_Impact/Dashboard)
+[![AI Job Impact Dashboard](https://github.com/ghazalayobi/data-projects/blob/main/ai_job_impact/docs/ai_job_trend.png)](https://public.tableau.com/views/AIJobTrendMOMMakeOverMondayMOM2025VOTD/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
 ---
 
