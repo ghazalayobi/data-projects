@@ -3,7 +3,7 @@
 ## 🔎 Project Overview
 This project explores how **Artificial Intelligence (AI)** is transforming the global job market across industries and countries. Using SQL for **data exploration** and Tableau for **visual storytelling**, I investigated critical questions such as:
 - Which industries will gain or lose the most jobs by 2030?  
-- Are high-paying jobs safer from automation?  
+- Are high paying jobs safer from automation?  
 - How do education, gender diversity, and remote work trends interact with AI’s impact?  
 - Which jobs are **“future-proof”** (high pay, low automation risk, increasing demand)?  
 - Which jobs act as **“Chameleon Jobs”** (appearing across multiple industries and countries)?  
@@ -23,14 +23,14 @@ The dataset contains **30,000 records**, covering **639 job titles** across **8 
    - Derived descriptive trends such as job growth, pay averages, and automation risks.  
 
 3. **Business Analysis**  
-   - Measured industry-level job shifts between 2024–2030.  
+   - Measured industry level job shifts between 2024 - 2030.  
    - Compared education levels and their vulnerability to AI disruption.  
    - Analyzed the relationship between gender diversity and remote work.  
    - Identified outliers and unusual job–industry combinations.  
 
 4. **Advanced Analytics**  
    - Ranked jobs by automation risk and salary.  
-   - Defined “future-proof jobs” based on salary, automation risk, and demand growth.  
+   - Defined “future - proof jobs” based on salary, automation risk, and demand growth.  
    - Detected “Chameleon Jobs” across industries and countries.  
    - Tested correlations (e.g., salary vs automation risk).  
 
@@ -108,13 +108,7 @@ Examples:
 - Environmental Education Officer  
 - Mental Health Nurse  
 - Music Tutor  
-
----
-
-### 7. Odd Job–Industry Combinations
-- Product Manager in Healthcare (15 records)  
-- Mental Health Nurse in Manufacturing (15 records)  
-- Music Tutor in Education (14 records)  
+ 
 
 ---
 
@@ -122,18 +116,12 @@ Examples:
 To complement SQL analysis, I designed an **interactive Tableau dashboard**:  
 
 **Features**  
-- 📈 **Industry Growth & Decline** – stacked bar charts comparing 2024 vs. 2030 job openings.  
-- 💰 **Salary vs. Automation Risk Scatterplot** – visualize whether pay shields against automation.  
+- 📈 **Industry Growth & Decline** comparing 2024 vs. 2030 job openings.  
 - 🎓 **Education Impact** – boxplots of median salary by education level.  
 - 👥 **Diversity & Remote Work** – dual-axis charts for gender ratio vs. remote work.  
-- 🌀 **Chameleon Jobs Tracker** – highlight transferable jobs across industries.  
 - 📌 **Summary KPIs** – total jobs gained/lost, average salary, % remote roles.  
 
-**Design Choices**  
-- Built as a **one-pager dashboard** (optimized for Tableau Public).  
-- Used **minimal whitespace** with **fit-to-width layout**.  
-- Color-coded by **industry** for easier cross-comparison.  
-- Tooltips enriched with **2030 projections** for drill-downs.  
+[![AI Job Impact Dashboard](tableau_dashboard/dashboard_screenshots/dashboard_preview.png)](https://public.tableau.com/views/AI_Job_Impact/Dashboard)
 
 ---
 
@@ -149,4 +137,3 @@ The combination of **SQL analysis + Tableau dashboards** transforms raw data int
 
 ---
 
-## 📂 Repository Structure
