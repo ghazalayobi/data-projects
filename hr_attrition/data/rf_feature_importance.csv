@@ -1,0 +1,53 @@
+feature,importance
+MonthlyIncome,0.08262269734884624
+Age,0.06204545000410917
+TotalWorkingYears,0.05155111576500241
+DistanceFromHome,0.04770917852015846
+StockOptionLevel,0.0449703811092525
+YearsAtCompany,0.04179290775192175
+OverTime_Yes,0.041290835375707324
+JobLevel,0.03843021326454157
+JobSatisfaction,0.03738523930613542
+OverTime_No,0.03631917856440802
+PercentSalaryHike,0.035633017384702856
+YearsWithCurrManager,0.03487750963556748
+YearsInCurrentRole,0.030081120064649067
+NumCompaniesWorked,0.02996771496335576
+YearsSinceLastPromotion,0.029257016354475508
+TrainingTimesLastYear,0.027664139127280246
+EnvironmentSatisfaction,0.026287043231242264
+WorkLifeBalance,0.02545323806615455
+RelationshipSatisfaction,0.025294321293742147
+JobInvolvement,0.023679760844055125
+MaritalStatus_Single,0.01910117074121613
+Department_Sales,0.011840020261497325
+BusinessTravel_Travel_Frequently,0.011506450953435192
+Department_Research & Development,0.011357181528640282
+JobRole_Sales Executive,0.009747945607934303
+EducationField_Medical,0.009570981030987495
+JobRole_Laboratory Technician,0.009516226171222403
+MaritalStatus_Divorced,0.00941513427891781
+Gender_Male,0.008838435663923047
+Gender_Female,0.008739555877129483
+EducationField_Life Sciences,0.008697510720680245
+MaritalStatus_Married,0.008332103522490414
+Education_Bachelor's Degree,0.008155846944883825
+Education_Master's Degree,0.00815130605176992
+JobRole_Research Scientist,0.007989797361519892
+BusinessTravel_Travel_Rarely,0.007900287923059697
+Education_Associates Degree,0.007870338946894677
+EducationField_Technical Degree,0.007200579672709246
+JobRole_Sales Representative,0.006640141443810616
+PerformanceRating,0.005898906950362032
+JobRole_Manufacturing Director,0.005790335276171224
+JobRole_Healthcare Representative,0.005096877563624369
+Education_High School,0.004874701983976942
+EducationField_Marketing,0.004797109326860956
+BusinessTravel_Non-Travel,0.0044826986962889295
+JobRole_Manager,0.0032928602991415886
+JobRole_Human Resources,0.00261039354597658
+Education_Doctoral Degree,0.00241599801700001
+JobRole_Research Director,0.0022802033067969305
+EducationField_Other,0.002255781860923943
+Department_Human Resources,0.0020045354524864736
+EducationField_Human Resources,0.0013165050423600982
